@@ -1,0 +1,44 @@
+﻿@using TelefonRehber.Models
+@model List<Calisanlar>
+@{
+    ViewBag.Title = "CalisanlarListe";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<a href="/Calisanlar/CalisanEkle" class="btn btn-primary">Yeni Çalışan Ekle</a><br /><br />
+<table class="table table-bordered">
+    <tr>
+        <th>ÇalışanId</th>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Telefon</th>
+        <th>Departman</th>
+        <th>Yönetici Bilgileri</th>
+        <th>Düzenle</th>
+        <th>Sil</th>
+    </tr>
+    <tbody>
+        @foreach (var calisan in Model)
+        {
+            <tr>
+                <th>@calisan.calisanId</th>
+                <td>@calisan.calisanAd</td>
+                <td>@calisan.calisanSoyad</td>
+                <td>@calisan.telefon</td>
+                <td>@calisan.Departmanlar.departmanAd</td>
+
+                <td>@calisan.yöneticiBilgiler</td>
+
+
+                <td><a href="/Calisanlar/CalisanGetir/@calisan.calisanId" class="btn btn-success">Düzenle</a></td>
+                <td><a href="/Calisanlar/CalisanSil/@calisan.calisanId" class="btn btn-danger">Sil</a></td>
+
+                @*<td><a href="/Calisanlar/Detay/@calisan.calisanId" class="btn btn-primary">Kişi Detay</a></td>*@
+
+                @*<td>@Html.ActionLink("Kişi detayı","detay",new {id=calisan.calisanId },new {@class="btn btn-primary" })</td>*@
+
+            </tr>
+        }
+    </tbody>
+</table>

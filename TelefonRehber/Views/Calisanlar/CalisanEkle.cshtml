@@ -1,0 +1,45 @@
+﻿@model TelefonRehber.Models.Calisanlar
+@{
+    ViewBag.Title = "CalisanEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>CalisanEkle</h2>
+
+<form class="form-group" method="post">
+    <label>ad</label>
+    <br />
+    <input type="text" name="calisanAd" class="form-control" />
+    <br />
+    <label>soyad</label>
+    <br />
+    <input type="text" name="calisanSoyad" class="form-control" />
+    <br />
+    <label>telefon</label>
+    <br />
+    <input type="text" name="telefon" class="form-control" />
+    <br />
+    <label>departman</label>
+    <br />
+
+    @*     @Html.DropDownListFor(m => m.departmanlar.departmanId , new SelectList(ViewBag.dgr),"seç baba",new {@class="form-control" } )*@
+
+    @Html.DropDownListFor(m => m.Departmanlar.departmanId, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+
+    @*<input type="text" name="departman" />*@
+    <br />
+
+    <label>yönetici Bilgileri</label>
+    <br />
+    @Html.DropDownListFor(m => m.calisanAd, (List<SelectListItem>)ViewBag.ynt, new { @class = "form-control" })
+    @*<input type="text" name="yöneticiBilgiler" class="form-control" />*@
+    <br />
+
+    <label>yönetici mi</label>
+    <input type="checkbox" name="yöneticiMi" class="checkbox" checked="checked" />
+    <br />
+
+    <input type="submit" value="Kaydet" />
+
+</form>
+

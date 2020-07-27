@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "DENEME";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>DENEME</h2>
+<button id="b1">calisan getir</button>
+<ul id="ul1"></ul>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#b1").click(function () {
+            $.getJSON("/Home/GetDepartman", null, function (data) {
+                $.each(data, function (i, departman) {
+                    $("#ul1").append("<li>" + departman.departmanAd + "</li>");
+                })
+            })
+        })
+    })
+</script>

@@ -1,0 +1,48 @@
+﻿@model TelefonRehber.Models.Calisanlar
+@{
+    ViewBag.Title = "CalisanGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>CalisanGetir</h2>
+
+
+@using (Html.BeginForm("Guncelle", "Calisanlar", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.calisanId)
+        @Html.TextBoxFor(m => m.calisanId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.calisanAd)
+        @Html.TextBoxFor(m => m.calisanAd, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.calisanSoyad)
+        @Html.TextBoxFor(m => m.calisanSoyad, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.telefon)
+        @Html.TextBoxFor(m => m.telefon, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.departman)
+        @Html.DropDownListFor(m => m.Departmanlar.departmanId, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+
+        @*@Html.TextBoxFor(m => m.departmanId, new { @class = "form-control" })*@
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.yöneticiMi)
+        @Html.TextBoxFor(m => m.yöneticiMi, new {@class="form-control" } )
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.yöneticiBilgiler)
+        @Html.DropDownListFor(m => m.calisanAd, (List<SelectListItem>)ViewBag.ynt, new { @class = "form-control" })
+
+        @*@Html.TextBoxFor(m => m.departmanId, new { @class = "form-control" })*@
+    </div>
+
+    <div>
+        <button class="btn btn-warning"> Güncelle</button>
+    </div>
+}

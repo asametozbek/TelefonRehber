@@ -1,0 +1,26 @@
+﻿@model TelefonRehber.Models.Admins
+@{
+    ViewBag.Title = "AdminGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AdminGetir</h2>
+
+@using (Html.BeginForm("Guncelle", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.AdminId)
+        @Html.TextBoxFor(m => m.AdminId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.UserName)
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning"> Güncelle</button>
+    </div>
+}

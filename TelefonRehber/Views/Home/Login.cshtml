@@ -1,0 +1,44 @@
+﻿@model TelefonRehber.Models.Admins
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+
+    <div class="form-group">
+
+        <row>
+            <div>
+                @*<img src="~/image/rehber.jpg" alt="rehber" width="500">*@
+
+
+                <div align="center" class="img-responsive"><img src="~/image/rehber.jpg" alt="resim" width="350"/></div><br /><br />
+
+                <div align="center">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <input type="text" placeholder="User Name..." name="UserName"><br /><br />
+                    <input type="password" placeholder="Password.." name="Password" required><br /><br>
+
+                    @*@Html.LabelFor(a => a.UserName)<br>
+                        @Html.TextBoxFor(a => a.UserName)<br>
+                        @Html.ValidationMessageFor(a => a.UserName)<br>
+                        @Html.LabelFor(a => a.Password)<br>
+                        @Html.PasswordFor(a => a.Password)<br>
+                        @Html.ValidationMessageFor(a => a.Password)<br>*@
+
+
+                    <input type="submit" value="Login" class="btn btn-success" />
+                </div>
+            </div>
+        </row>
+    </div>
+}

@@ -1,0 +1,16 @@
+﻿@model TelefonRehber.Models.Departmanlar
+@{
+    ViewBag.Title = "DepartmanEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>DepartmanEkle</h2>
+
+<form class="form-group" method="post">
+    <label>Departman Adı</label>
+    <br />
+    <input type="text" class="form-group" name="departmanAd" />
+    <br />
+    <input type="submit" class="btn btn-group-vertical" value="Kaydet" />
+
+</form>

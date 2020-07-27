@@ -1,0 +1,22 @@
+﻿@model TelefonRehber.Models.Departmanlar
+@{
+    ViewBag.Title = "DepartmanGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>DepartmanGetir</h2>
+
+@using (Html.BeginForm("Guncelle", "Departman", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.departmanId)
+        @Html.TextBoxFor(m => m.departmanId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.departmanAd)
+        @Html.TextBoxFor(m => m.departmanAd, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning"> Güncelle</button>
+    </div>
+}

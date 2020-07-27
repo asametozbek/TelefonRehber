@@ -1,0 +1,20 @@
+﻿@model TelefonRehber.Models.Admins
+@{
+    ViewBag.Title = "AdminEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AdminEkle</h2>
+
+<form class="form-group" method="post">
+    <label>Kullanıcı Adı</label>
+    <br />
+    <input type="text" class="form-group" name="UserName" />
+    <br />
+    <label>Kullanıcı Şifre</label>
+    <br />
+    <input type="text" class="form-group" name="Password" />
+    <br />
+    <input type="submit" class="btn btn-group-vertical" value="Kaydet" />
+
+</form>

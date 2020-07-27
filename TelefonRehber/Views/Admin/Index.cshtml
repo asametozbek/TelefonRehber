@@ -1,0 +1,33 @@
+﻿@using TelefonRehber.Models
+@model List<Admins>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<a href="/Admin/AdminEkle" class="btn btn-primary">Yeni Admin Ekle</a><br /><br />
+<table class="table table-bordered">
+    <tr>
+        <th>AdminId</th>
+        <th>UserName</th>
+        <th>Password</th>
+        <th>Düzenle</th>
+        <th>Sil</th>
+    </tr>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.AdminId</td>
+            <td>@item.UserName</td>
+            <td class="text">@item.Password</td>
+            <td><a href="/Admin/AdminGetir/@item.AdminId" class="btn btn-success">Düzenle</a></td>
+            <td><a href="/Admin/AdminSil/@item.AdminId" class="btn btn-danger">Sil</a></td>
+        </tr>
+        }
+
+    </tbody>
+</table>

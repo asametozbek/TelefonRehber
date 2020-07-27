@@ -1,0 +1,83 @@
+﻿@using TelefonRehber.Models
+@model List<Calisanlar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <!-- Content here -->
+
+    <div class="col-sm3"></div>
+    <div class="col-sm-6">
+        <table class="table table-bordered">
+
+            <tr>
+
+                <th>Adı Soyadı</th>
+                <th>Telefon</th>
+                <th>Çalışan Detay</th>
+            </tr>
+            <tbody>
+                @foreach (var calisan in Model)
+                {
+                    <tr>
+
+                        <td width="200px" class="">@calisan.calisanAd @calisan.calisanSoyad</td>
+                        <td>@calisan.telefon</td>
+                        <td><a href="/Calisanlar/Detay/@calisan.calisanId" class="btn btn-primary">Detay</a></td>
+
+                        @*<td><a href="/Calisanlar/CalisanGetir/@calisan.calisanId" class="btn btn-success">Düzenle</a></td>
+                            <td><a href="/Calisanlar/CalisanSil/@calisan.calisanId" class="btn btn-danger">Sil</a></td>*@
+
+
+
+                        @*<td>@Html.ActionLink("Kişi detayı","detay",new {id=calisan.calisanId },new {@class="btn btn-primary" })</td>*@
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+@*<a href="/Calisanlar/CalisanEkle" class="btn btn-primary">Yeni Çalışan Ekle</a><br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>ÇalışanId</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Telefon</th>
+            <th>Departman</th>
+            <th>Yönetici Bilgileri</th>
+            <th>Yönetici</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
+        </tr>
+        <tbody>
+            @foreach (var calisan in Model)
+            {
+                <tr>
+                    <th>@calisan.calisanId</th>
+                    <td>@calisan.calisanAd</td>
+                    <td>@calisan.calisanSoyad</td>
+                    <td>@calisan.telefon</td>
+                    <td>@calisan.departman</td>
+
+                    <td>@calisan.yöneticiBilgiler</td>
+                    <td>@calisan.yöneticiMi</td>
+
+                    <td><a href="/Calisanlar/CalisanGetir/@calisan.calisanId" class="btn btn-success">Düzenle</a></td>
+                    <td><a href="/Calisanlar/CalisanSil/@calisan.calisanId" class="btn btn-danger">Sil</a></td>
+
+                    @*<td><a href="/Calisanlar/Detay/@calisan.calisanId" class="btn btn-primary">Kişi Detay</a></td>
+
+                    @*<td>@Html.ActionLink("Kişi detayı","detay",new {id=calisan.calisanId },new {@class="btn btn-primary" })</td>*@
+
+@*</tr>
+            }
+        </tbody>
+    </table>*@
+
